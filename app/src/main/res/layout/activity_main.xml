@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:background="@drawable/wall"
+>
+    <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:id="@+id/toolbar"
+            android:elevation="4dp"
+            android:background="@color/colorPrimary"
+            android:layout_height="?attr/actionBarSize"
+            android:contentInsetLeft="0dp"
+            android:contentInsetStart="0dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetStart="0dp"
+    >
+        <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="18dp"
+        >
+            <LinearLayout
+                    android:id="@+id/search_layout"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_margin="0dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+                <ImageView
+                        android:gravity="center"
+                        android:background="@android:color/white"
+                        android:layout_height="40dp"
+                        android:padding="10dp"
+                        android:layout_width="40dp"
+                        android:src="@drawable/ic_google"
+                        android:id="@+id/toolbar_search_imageview_favicon"
+                />
+
+                <EditText
+                        android:maxLines="1"
+                        android:inputType="textNoSuggestions"
+                        android:gravity="top|left"
+                        android:layout_width="0dp"
+                        android:id="@+id/edit_text"
+                        android:layout_weight="4"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/white"
+                        android:hint="Search or Enter web address"
+                        android:textSize="13sp"
+                        android:padding="10dp"
+                        android:textColor="@android:color/black"
+                        android:textColorHint="@android:color/darker_gray"/>
+
+                <Button
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:background="@android:color/white"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:onClick="go"
+                        android:textColor="@android:color/darker_gray"
+                        android:layout_width="0dp"
+                        android:text="GO"/>
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+
+    </android.support.v7.widget.Toolbar>
+
+    <ProgressBar
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:id="@+id/progressbar"
+            android:background="@color/colorPrimary"
+            android:progressDrawable="@drawable/custom_progress"
+            android:visibility="gone"
+    />
+
+    <WebView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="7"
+            android:id="@+id/webview"
+    >
+        <android.support.v7.widget.CardView
+                android:layout_width="395dp"
+                android:layout_height="wrap_content"
+                tools:layout_editor_absoluteY="0dp"
+                tools:layout_editor_absoluteX="8dp"/>
+    </WebView>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.6"
+            android:id="@+id/bottomTab"
+            android:gravity="center"
+            android:background="@color/bottom_bar_background"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+        <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="?android:selectableItemBackground"
+                android:src="@drawable/ic_arrow_left"
+                android:onClick="goBack"
+        />
+
+        <ImageView
+                android:onClick="goForward"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="?android:selectableItemBackground"
+                android:src="@drawable/ic_arrow_right"
+        />
+
+        <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="goHome"
+                android:background="?android:selectableItemBackground"
+                android:src="@drawable/ic_home"/>
+
+        <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="?android:selectableItemBackground"
+                android:src="@drawable/ic_reload"
+                android:onClick="refresh"
+        />
+
+        <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="?android:selectableItemBackground"
+                android:src="@drawable/ic_share"
+                android:onClick="share"
+        />
+
+    </LinearLayout>
+
+
+</LinearLayout>
